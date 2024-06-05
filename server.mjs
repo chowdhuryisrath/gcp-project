@@ -10,11 +10,13 @@ app.use(bodyParser.json());
 // Middleware to enable CORS
 app.use(cors());
 
-const corsOptions = {
-    origin: 'http://localhost:3000', // Allow only this origin
-    optionsSuccessStatus: 200 // Some legacy browsers choke on 204
-  };
-  app.use(cors(corsOptions));
+// const corsOptions = {
+//     origin: 'http://localhost:3000', // Allow only this origin
+//     optionsSuccessStatus: 200 // Some legacy browsers choke on 204
+//   };
+//   app.use(cors(corsOptions));
+
+app.options('*', cors())
 
 // POST endpoint to handle form submission
 app.post('/login', (req, res) => {
