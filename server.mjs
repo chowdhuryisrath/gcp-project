@@ -29,6 +29,11 @@ app.post('/login', (req, res) => {
   res.status(200).json({ message: 'Form submitted successfully!' });
 });
 
+app.get('/', (req, res) => {
+
+  res.status(200).json({ message: 'Hello, this is EDUNET server!' });
+});
+
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
