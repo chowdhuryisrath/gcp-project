@@ -3,7 +3,7 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 
 const app = express();
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
@@ -32,7 +32,6 @@ app.post('/login', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-
   res.status(200).json({ message: 'Hello, this is EDUNET server!' });
 });
 
